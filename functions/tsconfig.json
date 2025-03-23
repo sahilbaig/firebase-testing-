@@ -1,17 +1,19 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
     "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
-    "moduleResolution": "nodenext",
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "outDir": "lib",
-    "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "lib", // ✅ Compiles `functions/src/` to `functions/lib/`
+    "rootDir": "./src", // ✅ Ensures only `functions/src/` is compiled
+    "baseUrl": "../lib", // ✅ Makes Firebase import from `lib/` (compiled `src/`)
+    "paths": {
+      "@src/*": ["./*"] // ✅ Enables `import { app } from "@src/index.js";`
+    },
+    "noImplicitAny": false
   },
-  "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

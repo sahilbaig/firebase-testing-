@@ -2,11 +2,13 @@
   "name": "express-template-ts",
   "version": "1.0.0",
   "description": "Express Template in TS",
-  "main": "index.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec tsx index.ts"
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": " tsc",
+    "start": "node lib/index.js"
   },
   "author": "",
   "license": "ISC",
